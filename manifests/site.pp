@@ -85,4 +85,23 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
+
+  # Customized Packages
+  include chrome
+  include firefox
+  include vlc
+  include skype
+  include flowdock
+  include colloquy
+  include pivotalbooster
+  include googledrive
+  include googleearth
+  include statsd
+  include tmux
+  include adium
+  include virtualbox
+  include istatmenus4
+  include vmware_fusion
+  include wget
+  include onepassword
 }
