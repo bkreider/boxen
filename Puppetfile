@@ -33,3 +33,22 @@ github "sudo",       "1.0.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+github "chrome",     "1.1.0"
+github "colloquy",   "1.0.0"
+github "pivotalbooster", "1.0.4"
+github "firefox",    "1.0.6"
+github "googledrive", "1.0.2"
+github "googleearth", "1.0.0"
+github "statd",      "1.0.2"
+github "vlc",        "1.0.1"
+github "tmux",       "1.0.2"
+github "adium",      "1.1.1"
+github "virtualbox"  "1.0.2"
+github "istatmenus4" "1.0.0"
+github "vmwarefusion", "1.0.0"
+github "skype",      "1.0.2"
+github "flowdock",   "1.0.0"
+github "wget",       "1.0.0"
+github "onepassword", "1.0.0"
+
+github "vlc",        "1.0.0"
