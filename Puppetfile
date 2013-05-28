@@ -51,3 +51,7 @@ github "vmware_fusion", "1.0.0"
 github "wget",       "1.0.0"
 github "onepassword", "1.0.0"
 
+github "omnigraffle", "1.1.0", :repo => "dieterdemeyer/puppet-omnigraffle"
+github "evernote",    "1.0.1", :repo => "jasonamyers/puppet-evernote"
+github "pgadmin3",    "0.0.3", :repo => "dennisreimann/puppet-pgadmin3"
+

@@ -104,4 +104,10 @@ node default {
   include vmware_fusion
   include wget
   include onepassword
+
+  include omnigraffle
+  include evernote
+  
+  # doesn't work
+  #include pgadmin3
 }
