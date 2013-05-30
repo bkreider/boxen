@@ -46,7 +46,7 @@ github "statsd",     "1.0.2"
 github "tmux",       "1.0.2"
 github "adium",      "1.1.1"
 github "virtualbox",  "1.0.2"
-github "istatmenus4", "1.0.0"
+#github "istatmenus4", "1.0.0"    # $16.00
 github "vmware_fusion", "1.0.0"
 github "wget",       "1.0.0"
 github "onepassword", "1.0.0"
