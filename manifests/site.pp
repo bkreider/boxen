@@ -86,28 +86,11 @@ node default {
     target => $boxen::config::repodir
   }
 
-  # Customized Packages
-  include chrome
-  include firefox
-  include vlc
-  include skype
-  include flowdock
-  include colloquy
-  include pivotalbooster
-  include googledrive
-  include googleearth
-  include statsd
-  include tmux
-  include adium
-  include virtualbox
-  include istatmenus4
-  include vmware_fusion
-  include wget
-  include onepassword
+   # continuum apps
+   include continuum::environment
+   
+   include projects::puppet
+   include projects::wakari
+   include projects::wakari-backend
 
-  include omnigraffle
-  include evernote
-  
-  # doesn't work
-  #include pgadmin3
 }
