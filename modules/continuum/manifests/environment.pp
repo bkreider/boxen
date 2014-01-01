@@ -4,6 +4,6 @@ class continuum::environment {
    include continuum::apps::mac
    #include projects::super-top-secret-project
 
-   include anaconda
+   #include anaconda
 }
 

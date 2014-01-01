@@ -7,21 +7,24 @@ class continuum::apps::mac {
     include vlc
     include skype
     include flowdock
-    include colloquy
     include pivotalbooster
+    include dropbox
+    include steam
+    include handbrake
     include googledrive
     include googleearth
     include statsd
     include tmux
     include adium
     include virtualbox
+    include vagrant
     #include istatmenus4  - paid app
     include vmware_fusion
     include wget
     include onepassword
 
     include omnigraffle
-    #include evernote   # EULA problems auto-installing
+    include evernote   # EULA problems auto-installing
 
     # doesn't work
     #include pgadmin3
