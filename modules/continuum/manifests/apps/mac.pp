@@ -23,9 +23,8 @@ class continuum::apps::mac {
     include wget
     include onepassword
 
-    include omnigraffle
-    include evernote   # EULA problems auto-installing
+    include omnigraffle::pro
+    include evernote   
 
-    # doesn't work
-    #include pgadmin3
+    include pgadmin3
 }

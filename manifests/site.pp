@@ -82,28 +82,37 @@ node default {
    # continuum apps
    include continuum::environment
    
-   include projects::ops
-   include projects::internal
-   include projects::puppet
-
+   # just pull down repo
    include projects::virtual
+
+   projects::virtual{ 'ops': }
+   projects::virtual{ 'internal': }
+   projects::virtual{ 'puppet': }
+
    projects::virtual{ 'bokeh': }
 
-   include projects::PDT
+   projects::virtual{ 'PDT': }
 
-   include projects::wakari
-   include projects::wakari-backend
+   projects::virtual{ 'wakari': }
+   projects::virtual{ 'wakari-backend': }
 
-   include projects::tty.js
-   include projects::elFinder
-   include projects::wakari-app-manager
-   include projects::wakari-authentication-proxy
-   include projects::wakari-client
-   include projects::wakari-deploy
-   include projects::wakari-file-xfer-app
-   include projects::wakari-frontend
-   include projects::wakari-operations-center
-   include projects::wakari-recipes
-   include projects::wakari-workbench
+   projects::virtual{ 'tty.js': }
+   projects::virtual{ 'elFinder': }
+   projects::virtual{ 'wakari-authentication-proxy': }
+   projects::virtual{ 'wakari-deploy': }
+   projects::virtual{ 'wakari-file-xfer-app': }
+   projects::virtual{ 'wakari-frontend': }
+   projects::virtual{ 'wakari-operations-center': }
+   projects::virtual{ 'wakari-recipes': }
+   projects::virtual{ 'wakari-workbench': }
+
+   # Personalized settings -- should be moved to modules/people
+   include osx::recovery_message { 'If this Mac is found, please call 617-233-8722': }
+   include osx::dock::2d
+   include osx::dock::autohide
+   include osx::dock::clear_dock
+   include osx::finder::unhide_library
+   class { 'osx::dock::position': position => 'right'}
+   class { 'osx::dock::icon_size': size => 18}
 
 }
