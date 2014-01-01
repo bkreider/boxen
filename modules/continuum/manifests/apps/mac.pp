@@ -8,16 +8,12 @@ class continuum::apps::mac {
     include skype
     include flowdock
     include pivotalbooster
-    include dropbox
-    include steam
-    include handbrake
     include googledrive
     include googleearth
     include statsd
     include tmux
     include adium
     include virtualbox
-    include vagrant
     #include istatmenus4  - paid app
     include vmware_fusion
     include wget
@@ -25,6 +21,12 @@ class continuum::apps::mac {
 
     include omnigraffle::pro
     include evernote   
+
+    include vagrant
+    include dropbox
+    include handbrake
+    include steam
+    include transmission   
 
     include pgadmin3
 }
