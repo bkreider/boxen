@@ -73,8 +73,8 @@ github "vmware_fusion", "1.1.0"
 github "wget",       "1.0.0"
 github "onepassword", "1.1.0"
 
-github "omnigraffle", "1.3.0",
-github "evernote",    "2.0.4",
+github "omnigraffle", "1.3.1", :repo => "bkreider/puppet-omnigraffle"
+github "evernote",    "2.0.4"
 
 github "vagrant",   "3.0.2"
 github "osx",       "2.2.2"
@@ -83,3 +83,8 @@ github "handbrake", "1.0.1"
 github "steam",     "1.0.1"
 github "transmission","1.1.0"
 github "pgadmin3",  "1.0.0"
+github "menumeters",  "0.0.1", :repo => "bkreider/puppet-menumeters"
+
+# Customize plists
+mod "property_list_key",  "0.1.0",   :github_tarball => "glarizza/puppet-property_list_key"
+
