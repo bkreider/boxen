@@ -52,6 +52,7 @@ github "ruby",       "6.7.2"
 github "stdlib",     "4.1.0", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",       "1.0.0"
 github "xquartz",    "1.1.1"
+github "java",       "1.2.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
@@ -86,5 +87,8 @@ github "pgadmin3",  "1.0.0"
 github "menumeters",  "0.0.1", :repo => "bkreider/puppet-menumeters"
 
 # Customize plists
-mod "property_list_key",  "0.1.0",   :github_tarball => "glarizza/puppet-property_list_key"
+mod "property_list_key",  "0.2.0",   :github_tarball => "glarizza/puppet-property_list_key"
 
+# Other apps - 3rd parties
+github "wireshark", "1.0.4.1", :repo => "bkreider/puppet-wireshark"
+github "googlevoiceandvideoplugin", "1.0.0", :repo => "phase2/puppet-googlevoiceandvideoplugin"

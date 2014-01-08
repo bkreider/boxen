@@ -91,7 +91,7 @@ node default {
    include continuum::environment
    
    # just pull down repo
-   include projects::virtual
+   #include projects::virtual
 
    projects::virtual{ 'ops': }
    projects::virtual{ 'internal': }
@@ -107,6 +107,7 @@ node default {
    projects::virtual{ 'tty.js': }
    projects::virtual{ 'elFinder': }
    projects::virtual{ 'wakari-authentication-proxy': }
+   projects::virtual{ 'wakari-app-manager': }
    projects::virtual{ 'wakari-deploy': }
    projects::virtual{ 'wakari-file-xfer-app': }
    projects::virtual{ 'wakari-frontend': }
@@ -115,80 +116,13 @@ node default {
    projects::virtual{ 'wakari-workbench': }
 
    # Personalized settings -- should be moved to modules/people
-   include osx::recovery_message { 'If this Mac is found, please call 617-233-8722': }
+   osx::recovery_message { 'If this Mac is found, please call 617-233-8722': }
+
    include osx::dock::2d
    include osx::dock::autohide
    include osx::dock::clear_dock
    include osx::finder::unhide_library
    class { 'osx::dock::position': position => 'left'}
    class { 'osx::dock::icon_size': size => 18}
-
-  # DOCK AND PLIST STUFF
-
-  include property_list_key
-  # Disable Gatekeeper so you can install any package you want
-  property_list_key { 'Disable Gatekeeper':
-    ensure => present,
-    path   => '/var/db/SystemPolicy-prefs.plist',
-    key    => 'enabled',
-    value  => 'no',
-  }
-
-  $my_homedir = "/Users/${::luser}"
-
-  # NOTE: Dock prefs only take effect when you restart the dock
-  property_list_key { 'Hide the dock':
-    ensure     => present,
-    path       => "${my_homedir}/Library/Preferences/com.apple.dock.plist",
-    key        => 'autohide',
-    value      => true,
-    value_type => 'boolean',
-    notify     => Exec['Restart the Dock'],
-  }
-
-  property_list_key { 'Align the Dock Left':
-    ensure     => present,
-    path       => "${my_homedir}/Library/Preferences/com.apple.dock.plist",
-    key        => 'orientation',
-    value      => 'left',
-    notify     => Exec['Restart the Dock'],
-  }
-
-  property_list_key { 'Lower Right Hotcorner - Screen Saver':
-    ensure     => present,
-    path       => "${my_homedir}/Library/Preferences/com.apple.dock.plist",
-    key        => 'wvous-br-corner',
-    value      => 10,
-    value_type => 'integer',
-    notify     => Exec['Restart the Dock'],
-  }
-
-  property_list_key { 'Lower Right Hotcorner - Screen Saver - modifier':
-    ensure     => present,
-    path       => "${my_homedir}/Library/Preferences/com.apple.dock.plist",
-    key        => 'wvous-br-modifier',
-    value      => 0,
-    value_type => 'integer',
-    notify     => Exec['Restart the Dock'],
-  }
-
-  exec { 'Restart the Dock':
-    command     => '/usr/bin/killall -HUP Dock',
-    refreshonly => true,
-  }
-
-  file { 'Dock Plist':
-    ensure  => file,
-    require => [
-                 Property_list_key['Lower Right Hotcorner - Screen Saver - modifier'],
-                 Property_list_key['Hide the dock'],
-                 Property_list_key['Align the Dock Left'],
-                 Property_list_key['Lower Right Hotcorner - Screen Saver'],
-                 Property_list_key['Lower Right Hotcorner - Screen Saver - modifier'],
-               ],
-    path    => "${my_homedir}/Library/Preferences/com.apple.dock.plist",
-    mode    => '0600',
-    notify     => Exec['Restart the Dock'],
-  }
 
 }

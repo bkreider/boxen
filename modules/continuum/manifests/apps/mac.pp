@@ -19,6 +19,9 @@ class continuum::apps::mac {
     include wget
     include onepassword
 
+    # Java is large and is outdated if you have it already installed
+    #include java
+
     include omnigraffle::pro
     include evernote   
 
@@ -29,4 +32,7 @@ class continuum::apps::mac {
     include transmission   
 
     include pgadmin3
+
+    include wireshark
+    include googlevoiceandvideoplugin
 }
