@@ -91,7 +91,8 @@ node default {
    include continuum::environment
    
    # just pull down repo
-   #include projects::virtual
+   projects::virtual{ 'conda': user => 'pydata'} 
+   projects::virtual{ 'conda-recipes': user => 'pydata'} 
 
    projects::virtual{ 'ops': }
    projects::virtual{ 'internal': }
